@@ -1,35 +1,11 @@
-import { SimpleGrid, Spinner, Text } from "@chakra-ui/react";
-import React from "react";
-import InfiniteScroll from "react-infinite-scroll-component";
-import useGames from "../hooks/useGames";
+import { useQuery } from "@apollo/client";
+import { SimpleGrid } from "@chakra-ui/react";
+import { GET_CHARACTERS } from "../services/apolloClient";
 import GameCard from "./GameCard";
 import GameCardContainer from "./GameCardContainer";
 import GameCardSkeleton from "./GameCardSkeleton";
-import { useEffect } from "react";
-import { client, GET_CHARACTERS } from "../services/apolloClient";
-import { useState } from "react";
-import { useQuery } from "@apollo/client";
 const GameGrid = () => {
-  const [charachters, setCharachters] = useState([]);
-
   const skeletons = [1, 2, 3, 4, 5, 6];
-
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const { data } = await client.query({
-  //         query: GET_CHARACTERS,
-  //       });
-
-  //       setCharachters(data.characters.results);
-  //       console.log(data.characters.results);
-  //     } catch (error) {
-  //       console.error("Error fetching data:", error);
-  //     }
-  //   };
-
-  //   fetchData();
-  // }, []);
   const { loading, error, data } = useQuery(GET_CHARACTERS());
 
   return (

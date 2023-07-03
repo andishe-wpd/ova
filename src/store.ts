@@ -16,6 +16,8 @@ interface GameQueryStore {
 }
 
 const useGameQueryStore = create<GameQueryStore>((set) => ({
+
+
   gameQuery: {},
   setSearchText: (searchText) =>
     set(() => ({ gameQuery: { searchText } })),
@@ -35,6 +37,10 @@ const useGameQueryStore = create<GameQueryStore>((set) => ({
     set((store) => ({
       gameQuery: { ...store.gameQuery, sortOrder },
     })),
+
+
+
+    
 }));
 
 export default useGameQueryStore;

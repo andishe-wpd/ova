@@ -1,21 +1,18 @@
 import {
+  Box,
   Card,
   CardBody,
-  Heading,
-  HStack,
-  Box,
   Flex,
+  HStack,
+  Heading,
   Tooltip,
-  Image,
 } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 import Game from "../entities/Game";
-import getCroppedImageUrl from "../services/image-url";
 import CriticScore from "./CriticScore";
 import Emoji from "./Emoji";
 import PlatformIconList from "./PlatformIconList";
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import "react-lazy-load-image-component/src/effects/blur.css";
 
 interface Props {
   game: Game;
@@ -31,6 +28,7 @@ const GameCard = ({ game }: Props) => {
         width={400}
         height={400}
         effect="blur"
+        delayTime={200}
       />
       <CardBody>
         <HStack justifyContent="space-between" marginBottom={3}>
