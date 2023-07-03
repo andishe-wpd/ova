@@ -1,13 +1,17 @@
 import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
+import useGameQueryStore from "../store";
 
 export const client = new ApolloClient({
   uri: "https://rickandmortyapi.com/graphql",
   cache: new InMemoryCache(),
 });
 
-export const GET_CHARACTERS = () => gql`
+export const GET_CHARACTERS = (
+  name = "",
+  location: number | string | undefined = ""
+) => gql`
   query {
-    characters(page: 1) {
+    characters(filter: { name: "${name}" }) {
       info {
         count
         pages
@@ -24,6 +28,9 @@ export const GET_CHARACTERS = () => gql`
         image
       }
     }
+    location(id: "${location}") {
+      id
+    }
   }
 `;
 export const GET_LOCATION = gql`
@@ -38,6 +45,20 @@ export const GET_LOCATION = gql`
         type
         dimension
         created
+      }
+    }
+  }
+`;
+
+export const GET_EPISODES = gql`
+  query {
+    episodes {
+      info {
+        count
+      }
+      results {
+        name
+        id
       }
     }
   }

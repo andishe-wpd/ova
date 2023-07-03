@@ -4,9 +4,13 @@ import { GET_CHARACTERS } from "../services/apolloClient";
 import GameCard from "./GameCard";
 import GameCardContainer from "./GameCardContainer";
 import GameCardSkeleton from "./GameCardSkeleton";
+import useGameQueryStore from "../store";
 const GameGrid = () => {
   const skeletons = [1, 2, 3, 4, 5, 6];
-  const { loading, error, data } = useQuery(GET_CHARACTERS());
+  const sdfsdf = useGameQueryStore((s) => s.gameQuery);
+  const { loading, error, data } = useQuery(
+    GET_CHARACTERS(sdfsdf?.searchText, sdfsdf?.LocationId)
+  );
 
   return (
     <SimpleGrid

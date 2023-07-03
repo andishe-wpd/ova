@@ -28,7 +28,6 @@ const GameCard = ({ game }: Props) => {
         width={400}
         height={400}
         effect="blur"
-        delayTime={200}
       />
       <CardBody>
         <HStack justifyContent="space-between" marginBottom={3}>
