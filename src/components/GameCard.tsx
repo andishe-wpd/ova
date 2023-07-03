@@ -34,7 +34,7 @@ const GameCard = ({ game, id }: Props) => {
           threshold={0.2}
         />
       ) : (
-        <Image minHeight={400} src={game?.image} />
+        <Image src={game?.image} />
         // <div>asdsd</div>
       )}
       <CardBody>
