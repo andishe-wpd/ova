@@ -8,7 +8,8 @@ export const client = new ApolloClient({
 
 export const GET_CHARACTERS = (
   name = "",
-  location: number | string | undefined = ""
+  location: number | string | undefined = "",
+  episodes: any = []
 ) => gql`
   query {
     characters(filter: { name: "${name}" }) {
@@ -29,6 +30,9 @@ export const GET_CHARACTERS = (
       }
     }
     location(id: "${location}") {
+      id
+    }
+    episodesByIds(ids: [${episodes}]) {
       id
     }
   }

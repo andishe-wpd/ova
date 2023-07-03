@@ -6,6 +6,7 @@ import {
   HStack,
   Heading,
   Tooltip,
+  Image,
 } from "@chakra-ui/react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
@@ -18,17 +19,24 @@ interface Props {
   game: Game;
 }
 
-const GameCard = ({ game }: Props) => {
+const GameCard = ({ game, id }: Props) => {
+  console.log(id);
   return (
     <Card height={550}>
-      <LazyLoadImage
-        src={game?.image}
-        alt="Game Image"
-        className="full-width-image"
-        width={400}
-        height={400}
-        effect="blur"
-      />
+      {id > 6 ? (
+        <LazyLoadImage
+          src={game?.image}
+          alt="Game Image"
+          className="full-width-image"
+          effect="blur"
+          delayMethod="debounce" // Optional - method for delaying the loading of images (e.g., "debounce" or "throttle")
+          delayTime={700}
+          threshold={0.2}
+        />
+      ) : (
+        <Image minHeight={400} src={game?.image} />
+        // <div>asdsd</div>
+      )}
       <CardBody>
         <HStack justifyContent="space-between" marginBottom={3}>
           <PlatformIconList

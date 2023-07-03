@@ -1,7 +1,8 @@
 import { Button, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react";
 import { BsChevronDown } from "react-icons/bs";
 import useGameQueryStore from "../store";
-
+import { useQuery } from "@apollo/client";
+import { GET_EPISODES } from "../services/apolloClient";
 const SortSelector = () => {
   const sortOrders = [
     { value: "", label: "Relevance" },
@@ -12,25 +13,29 @@ const SortSelector = () => {
     { value: "-rating", label: "Average rating" },
   ];
 
-  const setSortOrder = useGameQueryStore((s) => s.setSortOrder);
+  const setSortOrder = useGameQueryStore((s) => s.setSortEpisode);
+  const sdfsdf = useGameQueryStore((s) => s.gameQuery);
+  console.log(sdfsdf);
   const sortOrder = useGameQueryStore((s) => s.gameQuery.sortOrder);
   const currentSortOrder = sortOrders.find(
     (order) => order.value === sortOrder
   );
+  const { loading, error, data } = useQuery(GET_EPISODES);
+  console.log(data?.episodes?.results);
 
   return (
     <Menu>
       <MenuButton as={Button} rightIcon={<BsChevronDown />}>
-        Episode: {currentSortOrder?.label || "Relevance"}
+        Episode: {sdfsdf.sortOrder || "ALL EPISODES"}
       </MenuButton>
       <MenuList>
-        {sortOrders.map((order) => (
+        {data?.episodes?.results.map((order) => (
           <MenuItem
-            onClick={() => setSortOrder(order.value)}
-            key={order.value}
-            value={order.value}
+            onClick={() => setSortOrder(order.id)}
+            key={order.name}
+            value={order.id}
           >
-            {order.label}
+            {order.name}
           </MenuItem>
         ))}
       </MenuList>

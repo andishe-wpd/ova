@@ -9,7 +9,7 @@ const GameGrid = () => {
   const skeletons = [1, 2, 3, 4, 5, 6];
   const sdfsdf = useGameQueryStore((s) => s.gameQuery);
   const { loading, error, data } = useQuery(
-    GET_CHARACTERS(sdfsdf?.searchText, sdfsdf?.LocationId)
+    GET_CHARACTERS(sdfsdf?.searchText, sdfsdf?.LocationId, sdfsdf?.sortOrder)
   );
 
   return (
@@ -26,7 +26,7 @@ const GameGrid = () => {
           ))
         : data?.characters?.results?.map((game, index) => (
             <GameCardContainer key={index}>
-              <GameCard game={game} />
+              <GameCard game={game} id={index}/>
             </GameCardContainer>
           ))}
     </SimpleGrid>
