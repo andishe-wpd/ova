@@ -14,7 +14,8 @@ const EPSelector = () => {
     <Menu>
       {/* MenuButton component serves as the trigger for the menu */}
       <MenuButton as={Button} rightIcon={<BsChevronDown />}>
-        Episode list: {episodeList.sortOrder || "ALL EPISODES"}
+        Episode list:{" "}
+        {episodeList.sortOrder === "1" ? "Plot " : episodeList.sortOrder}
       </MenuButton>
       {/* MenuList component contains the menu items */}
       <MenuList>

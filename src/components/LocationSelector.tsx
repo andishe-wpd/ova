@@ -12,7 +12,8 @@ const LocationSelector = () => {
     <Menu>
       {/* MenuButton component serves as the trigger for the menu */}
       <MenuButton as={Button} rightIcon={<BsChevronDown />}>
-        Location List: {LocationLink.LocationId}
+        Location List:{" "}
+        {LocationLink.LocationId === 0 ? "Universe" : LocationLink.LocationId}
       </MenuButton>
       {/* MenuList component contains the menu items */}
       <MenuList>
