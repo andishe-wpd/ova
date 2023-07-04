@@ -7,6 +7,7 @@ import {
   Heading,
   Tooltip,
   Image,
+  Spinner,
 } from "@chakra-ui/react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
@@ -14,14 +15,20 @@ import Game from "../entities/Game";
 import CriticScore from "./CriticScore";
 import Emoji from "./Emoji";
 import PlatformIconList from "./PlatformIconList";
+import { useState } from "react";
 
 interface Props {
   game: Game;
 }
 
 const GameCard = ({ game, id }: Props) => {
+  const [isLoading, setIsLoading] = useState(true);
+  const handleImageLoad = () => {
+    setIsLoading(false);
+  };
+
   return (
-    <Card height={550}>
+    <Card minHeight={600}>
       {id > 6 ? (
         <LazyLoadImage
           src={game?.image}
@@ -33,7 +40,10 @@ const GameCard = ({ game, id }: Props) => {
           threshold={0.2}
         />
       ) : (
-        <Image src={game?.image} />
+        <>
+          {isLoading && <Spinner height={100} width={100} />}
+          <Image src={game?.image} onLoad={handleImageLoad} />
+        </>
         // <div>asdsd</div>
       )}
       <CardBody>
