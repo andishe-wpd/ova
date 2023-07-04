@@ -19,7 +19,7 @@ interface Props {
   game: Game;
 }
 
-const GameCard = ({ game, id }: Props) => {
+const EPCard = ({ game, id }: Props) => {
   const [isLoading, setIsLoading] = useState(true);
   const handleImageLoad = () => {
     setIsLoading(false);
@@ -77,4 +77,4 @@ const GameCard = ({ game, id }: Props) => {
   );
 };
 
-export default GameCard;
+export default EPCard;

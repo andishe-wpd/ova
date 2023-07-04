@@ -2,7 +2,7 @@ import { Heading } from "@chakra-ui/react";
 import useGameQueryStore from "../store";
 import Countdown from "./Countdown";
 import { useState } from "react";
-const GameHeading = () => {
+const EPHeading = () => {
   const genreId = useGameQueryStore((s) => s.gameQuery.genreId);
 
   const platformId = useGameQueryStore((s) => s.gameQuery.platformId);
@@ -21,4 +21,4 @@ const GameHeading = () => {
   );
 };
 
-export default GameHeading;
+export default EPHeading;

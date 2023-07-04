@@ -5,7 +5,7 @@ import GameCard from "./EPCard";
 import GameCardContainer from "./EPCardContainer";
 import GameCardSkeleton from "./EPCardSkeleton";
 import useGameQueryStore from "../store";
-const GameGrid = () => {
+const EPGrid = () => {
   const skeletons = [1, 2, 3, 4, 5, 6];
   const sdfsdf = useGameQueryStore((s) => s.gameQuery);
   const { loading, error, data } = useQuery(
@@ -33,4 +33,4 @@ const GameGrid = () => {
   );
 };
 
-export default GameGrid;
+export default EPGrid;

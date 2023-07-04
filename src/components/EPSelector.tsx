@@ -3,7 +3,7 @@ import { BsChevronDown } from "react-icons/bs";
 import useGameQueryStore from "../store";
 import { useQuery } from "@apollo/client";
 import { GET_EPISODES } from "../services/apolloClient";
-const EpisodeSelector = () => {
+const EPSelector = () => {
   const sortOrders = [
     { value: "", label: "Relevance" },
     { value: "-added", label: "Date added" },
@@ -42,4 +42,4 @@ const EpisodeSelector = () => {
   );
 };
 
-export default EpisodeSelector;
+export default EPSelector;
