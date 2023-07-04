@@ -4,7 +4,7 @@ interface Props {
   score: number;
 }
 
-const EpisodeBadge = ({ score }: Props) => {
+const EPBadge = ({ score }: Props) => {
   return (
     <Badge
       colorScheme={"green"}
@@ -17,4 +17,4 @@ const EpisodeBadge = ({ score }: Props) => {
   );
 };
 
-export default EpisodeBadge;
+export default EPBadge;
