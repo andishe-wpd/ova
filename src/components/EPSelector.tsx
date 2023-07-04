@@ -4,22 +4,12 @@ import useGameQueryStore from "../store";
 import { useQuery } from "@apollo/client";
 import { GET_EPISODES } from "../services/apolloClient";
 const EPSelector = () => {
-  const sortOrders = [
-    { value: "", label: "Relevance" },
-    { value: "-added", label: "Date added" },
-    { value: "name", label: "Name" },
-    { value: "-released", label: "Release date" },
-    { value: "-metacritic", label: "Popularity" },
-    { value: "-rating", label: "Average rating" },
-  ];
+
 
   const setSortOrder = useGameQueryStore((s) => s.setSortEpisode);
   const sdfsdf = useGameQueryStore((s) => s.gameQuery);
-  const sortOrder = useGameQueryStore((s) => s.gameQuery.sortOrder);
-  const currentSortOrder = sortOrders.find(
-    (order) => order.value === sortOrder
-  );
-  const { loading, error, data } = useQuery(GET_EPISODES);
+
+  const { data } = useQuery(GET_EPISODES);
 
   return (
     <Menu>

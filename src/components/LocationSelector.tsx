@@ -3,7 +3,7 @@ import { BsChevronDown } from "react-icons/bs";
 import useGameQueryStore from "../store";
 import { useQuery } from "@apollo/client";
 import { GET_LOCATION } from "../services/apolloClient";
-const PlatformSelector = () => {
+const LocationSelector = () => {
   const setSelectedPlatformId = useGameQueryStore((s) => s.setLocationId);
   const sdfsdf = useGameQueryStore((s) => s.gameQuery);
   const { loading, error: asd, data: asdasd } = useQuery(GET_LOCATION);
@@ -15,11 +15,7 @@ const PlatformSelector = () => {
         Locations
       </MenuButton>
       <MenuList>
-          <MenuItem
-            onClick={() => setSelectedPlatformId('')}
-          >
-            Universe
-          </MenuItem>
+        <MenuItem onClick={() => setSelectedPlatformId(0)}>Universe</MenuItem>
         {asdasd?.locations?.results.map((platform) => (
           <MenuItem
             onClick={() => setSelectedPlatformId(platform.id)}
@@ -33,4 +29,4 @@ const PlatformSelector = () => {
   );
 };
 
-export default PlatformSelector;
+export default LocationSelector;
