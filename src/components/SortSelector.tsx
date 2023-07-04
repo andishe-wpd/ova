@@ -15,7 +15,6 @@ const SortSelector = () => {
 
   const setSortOrder = useGameQueryStore((s) => s.setSortEpisode);
   const sdfsdf = useGameQueryStore((s) => s.gameQuery);
-  console.log(sdfsdf);
   const sortOrder = useGameQueryStore((s) => s.gameQuery.sortOrder);
   const currentSortOrder = sortOrders.find(
     (order) => order.value === sortOrder

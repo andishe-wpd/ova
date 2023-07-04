@@ -20,7 +20,6 @@ interface Props {
 }
 
 const GameCard = ({ game, id }: Props) => {
-  console.log(id);
   return (
     <Card height={550}>
       {id > 6 ? (
