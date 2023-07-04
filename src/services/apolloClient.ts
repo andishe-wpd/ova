@@ -1,5 +1,4 @@
 import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
-import useGameQueryStore from "../store";
 
 export const client = new ApolloClient({
   uri: "https://rickandmortyapi.com/graphql",

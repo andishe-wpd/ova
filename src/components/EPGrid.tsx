@@ -5,7 +5,7 @@ import EPCard from "./EPCard";
 import EPCardContainer from "./EPCardContainer";
 import EPCardSkeleton from "./EPCardSkeleton";
 import useGameQueryStore from "../store";
-import Game from "../entities/Game";
+import Character from "../entities/Character";
 const EPGrid = () => {
   const skeletons = [1, 2, 3, 4, 5, 6];
   const sdfsdf = useGameQueryStore((s) => s.gameQuery);
@@ -25,7 +25,7 @@ const EPGrid = () => {
               <EPCardSkeleton />
             </EPCardContainer>
           ))
-        : data?.characters?.results?.map((game: Game, index: number) => (
+        : data?.characters?.results?.map((game: Character, index: number) => (
             <EPCardContainer key={index}>
               <EPCard game={game} id={index} />
             </EPCardContainer>

@@ -11,12 +11,12 @@ import {
 } from "@chakra-ui/react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
-import Game from "../entities/Game";
+import Character from "../entities/Character";
 import EPBadge from "./EPBadge";
 import { useState } from "react";
 
 interface Props {
-  game: Game;
+  game: Character;
   id: number;
 }
 
