@@ -13,7 +13,6 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import Game from "../entities/Game";
 import EpisodeBadge from "./EpisodeBadge";
-import PlatformIconList from "./PlatformIconList";
 import { useState } from "react";
 
 interface Props {
@@ -55,9 +54,6 @@ const GameCard = ({ game, id }: Props) => {
       )}
       <CardBody>
         <HStack justifyContent="space-between" marginBottom={3}>
-          <PlatformIconList
-            platforms={game.parent_platforms?.map((p) => p.platform)}
-          />
           <EpisodeBadge score={game?.episode?.[0]?.name} />
         </HStack>
         <Heading fontSize="2xl">
