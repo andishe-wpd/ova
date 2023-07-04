@@ -1,8 +1,8 @@
 import { Box, Grid, Show, GridItem, Flex } from "@chakra-ui/react";
-import GameGrid from "../components/GameGrid";
-import GameHeading from "../components/GameHeading";
+import GameGrid from "../components/EPGrid";
+import GameHeading from "../components/EPHeading";
 import PlatformSelector from "../components/PlatformSelector";
-import EpisodeSelector from "../components/EpisodeSelector";
+import EpisodeSelector from "../components/EPSelector";
 
 const HomePage = () => {
   return (

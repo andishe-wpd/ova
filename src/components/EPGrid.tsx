@@ -1,9 +1,9 @@
 import { useQuery } from "@apollo/client";
 import { SimpleGrid } from "@chakra-ui/react";
 import { GET_CHARACTERS } from "../services/apolloClient";
-import GameCard from "./GameCard";
-import GameCardContainer from "./GameCardContainer";
-import GameCardSkeleton from "./GameCardSkeleton";
+import GameCard from "./EPCard";
+import GameCardContainer from "./EPCardContainer";
+import GameCardSkeleton from "./EPCardSkeleton";
 import useGameQueryStore from "../store";
 const GameGrid = () => {
   const skeletons = [1, 2, 3, 4, 5, 6];
