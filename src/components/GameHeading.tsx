@@ -8,7 +8,7 @@ const GameHeading = () => {
   const platformId = useGameQueryStore((s) => s.gameQuery.platformId);
   const [header, setHeader] = useState("");
   return (
-    <Heading as="h1" marginY={5} fontSize="5xl">
+    <Heading as="h1" marginY={5} fontSize="5xl" minHeight={100}>
       {/* {heading} */}
       {header}
       <Countdown

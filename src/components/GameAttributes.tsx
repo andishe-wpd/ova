@@ -1,7 +1,7 @@
-import { SimpleGrid, Text } from '@chakra-ui/react';
-import Game from '../entities/Game';
-import CriticScore from './CriticScore';
-import DefinitionItem from './DefinitionItem';
+import { SimpleGrid, Text } from "@chakra-ui/react";
+import Game from "../entities/Game";
+import EpisodeBadge from "./EpisodeBadge";
+import DefinitionItem from "./DefinitionItem";
 
 interface Props {
   game: Game;
@@ -16,7 +16,7 @@ const GameAttributes = ({ game }: Props) => {
         ))}
       </DefinitionItem>
       <DefinitionItem term="Metascore">
-        <CriticScore score={game.metacritic} />
+        <EpisodeBadge score={game.metacritic} />
       </DefinitionItem>
       <DefinitionItem term="Genres">
         {game.genres.map((genre) => (

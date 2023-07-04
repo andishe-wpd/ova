@@ -12,8 +12,7 @@ import {
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import Game from "../entities/Game";
-import CriticScore from "./CriticScore";
-import Emoji from "./Emoji";
+import EpisodeBadge from "./EpisodeBadge";
 import PlatformIconList from "./PlatformIconList";
 import { useState } from "react";
 
@@ -59,11 +58,10 @@ const GameCard = ({ game, id }: Props) => {
           <PlatformIconList
             platforms={game.parent_platforms?.map((p) => p.platform)}
           />
-          <CriticScore score={game?.episode?.[0]?.name} />
+          <EpisodeBadge score={game?.episode?.[0]?.name} />
         </HStack>
         <Heading fontSize="2xl">
           <div>{game.name}</div>
-          <Emoji rating={game.rating_top} />
         </Heading>
         <Flex justifyContent={"space-between"}>
           species: {game.species}

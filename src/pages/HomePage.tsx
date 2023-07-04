@@ -2,7 +2,7 @@ import { Box, Grid, Show, GridItem, Flex } from "@chakra-ui/react";
 import GameGrid from "../components/GameGrid";
 import GameHeading from "../components/GameHeading";
 import PlatformSelector from "../components/PlatformSelector";
-import SortSelector from "../components/SortSelector";
+import EpisodeSelector from "../components/EpisodeSelector";
 
 const HomePage = () => {
   return (
@@ -13,7 +13,7 @@ const HomePage = () => {
           <Box marginRight={5}>
             <PlatformSelector />
           </Box>
-          <SortSelector />
+          <EpisodeSelector />
         </Flex>
       </Box>
       <GameGrid />
