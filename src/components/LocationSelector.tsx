@@ -16,7 +16,7 @@ const LocationSelector = () => {
       </MenuButton>
       <MenuList>
         <MenuItem onClick={() => setSelectedPlatformId(0)}>Universe</MenuItem>
-        {asdasd?.locations?.results.map((platform) => (
+        {asdasd?.locations?.results.map((platform: any) => (
           <MenuItem
             onClick={() => setSelectedPlatformId(platform.id)}
             key={platform.id}
