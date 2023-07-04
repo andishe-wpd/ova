@@ -6,6 +6,7 @@ import EPCardContainer from "./EPCardContainer";
 import EPCardSkeleton from "./EPCardSkeleton";
 import useGameQueryStore from "../store";
 import Character from "../entities/Character";
+
 const EPGrid = () => {
   const skeletons = [1, 2, 3, 4, 5, 6];
   const sdfsdf = useGameQueryStore((s) => s.gameQuery);
@@ -20,12 +21,14 @@ const EPGrid = () => {
       padding="10px"
     >
       {loading
-        ? skeletons.map((skeleton) => (
+        ? // Render skeleton cards while data is being fetched
+          skeletons.map((skeleton) => (
             <EPCardContainer key={skeleton}>
               <EPCardSkeleton />
             </EPCardContainer>
           ))
-        : data?.characters?.results?.map((game: Character, index: number) => (
+        : // Render the actual cards with character data
+          data?.characters?.results?.map((game: Character, index: number) => (
             <EPCardContainer key={index}>
               <EPCard game={game} id={index} />
             </EPCardContainer>

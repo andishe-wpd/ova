@@ -4,6 +4,7 @@ interface Props {
   score: number;
 }
 
+// EPBadge component to display a score as a badge
 const EPBadge = ({ score }: Props) => {
   return (
     <Badge

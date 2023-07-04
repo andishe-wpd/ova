@@ -22,6 +22,8 @@ interface Props {
 
 const EPCard = ({ game, id }: Props) => {
   const [isLoading, setIsLoading] = useState(true);
+
+  // Function to handle the image load event
   const handleImageLoad = () => {
     setIsLoading(false);
   };
@@ -29,6 +31,7 @@ const EPCard = ({ game, id }: Props) => {
   return (
     <Card minHeight={600}>
       {id > 6 ? (
+        // LazyLoadImage component for images after the 6th card
         <LazyLoadImage
           src={game?.image}
           alt="Episode Image"
@@ -40,6 +43,7 @@ const EPCard = ({ game, id }: Props) => {
         />
       ) : (
         <>
+          {/* Display a loading spinner while the image is being loaded */}
           {isLoading && (
             <Box
               display={"flex"}
@@ -50,17 +54,20 @@ const EPCard = ({ game, id }: Props) => {
               <Spinner height={10} width={10} />
             </Box>
           )}
+          {/* Image component with onLoad event to handle image load */}
           <Image src={game?.image} onLoad={handleImageLoad} />
         </>
       )}
       <CardBody>
         <HStack justifyContent="space-between" marginBottom={3}>
+          {/* Display the episode badge */}
           <EPBadge score={game?.episode?.[0]?.name} />
         </HStack>
         <Heading fontSize="2xl">
           <div>{game.name}</div>
         </Heading>
         <Flex justifyContent={"space-between"}>
+          {/* Display the species and a tooltip for the status */}
           species: {game.species}
           <Tooltip label={game?.status}>
             <Box
