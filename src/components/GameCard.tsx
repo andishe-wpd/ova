@@ -41,10 +41,18 @@ const GameCard = ({ game, id }: Props) => {
         />
       ) : (
         <>
-          {isLoading && <Spinner height={100} width={100} />}
+          {isLoading && (
+            <Box
+              display={"flex"}
+              height={400}
+              alignItems={"center"}
+              justifyContent={"center"}
+            >
+              <Spinner height={10} width={10} />
+            </Box>
+          )}
           <Image src={game?.image} onLoad={handleImageLoad} />
         </>
-        // <div>asdsd</div>
       )}
       <CardBody>
         <HStack justifyContent="space-between" marginBottom={3}>
