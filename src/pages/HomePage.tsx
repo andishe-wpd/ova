@@ -3,13 +3,14 @@ import GameGrid from "../components/EPGrid";
 import EPHeading from "../components/EPHeading";
 import LocationSelector from "../components/LocationSelector";
 import EPSelector from "../components/EPSelector";
-
+import SearchInput from "../components/SearchInput";
 const HomePage = () => {
   return (
     <Grid>
       <Box paddingLeft={2}>
         <EPHeading />
-        <Flex marginBottom={5}>
+        <SearchInput />
+        <Flex margin={5}>
           <Box marginRight={5}>
             <LocationSelector />
           </Box>
