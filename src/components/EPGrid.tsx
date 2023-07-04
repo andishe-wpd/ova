@@ -3,7 +3,7 @@ import { SimpleGrid } from "@chakra-ui/react";
 import { GET_CHARACTERS } from "../services/apolloClient";
 import EPCard from "./EPCard";
 import EPCardContainer from "./EPCardContainer";
-import GameCardSkeleton from "./EPCardSkeleton";
+import EPCardSkeleton from "./EPCardSkeleton";
 import useGameQueryStore from "../store";
 const EPGrid = () => {
   const skeletons = [1, 2, 3, 4, 5, 6];
@@ -21,7 +21,7 @@ const EPGrid = () => {
       {loading
         ? skeletons.map((skeleton) => (
             <EPCardContainer key={skeleton}>
-              <GameCardSkeleton />
+              <EPCardSkeleton />
             </EPCardContainer>
           ))
         : data?.characters?.results?.map((game, index) => (
