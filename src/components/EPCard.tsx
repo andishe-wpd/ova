@@ -30,30 +30,34 @@ const EPCard = ({ game, id }: Props) => {
 
   return (
     <Card minHeight={600}>
+      {isLoading && (
+        <Box
+          display={"flex"}
+          height={400}
+          alignItems={"center"}
+          justifyContent={"center"}
+        >
+          <Spinner height={10} width={10} />
+        </Box>
+      )}
       {id > 6 ? (
         // LazyLoadImage component for images after the 6th card
-        <LazyLoadImage
-          src={game?.image}
-          alt="Episode Image"
-          className="full-width-image"
-          effect="blur"
-          delayMethod="debounce"
-          delayTime={700}
-          threshold={0.2}
-        />
+        <>
+          <LazyLoadImage
+            src={game?.image}
+            alt="Episode Image"
+            className="full-width-image"
+            effect="blur"
+            delayMethod="debounce"
+            delayTime={700}
+            threshold={0.2}
+            onLoadCapture={handleImageLoad}
+          />
+        </>
       ) : (
         <>
           {/* Display a loading spinner while the image is being loaded */}
-          {isLoading && (
-            <Box
-              display={"flex"}
-              height={400}
-              alignItems={"center"}
-              justifyContent={"center"}
-            >
-              <Spinner height={10} width={10} />
-            </Box>
-          )}
+
           {/* Image component with onLoad event to handle image load */}
           <Image src={game?.image} onLoad={handleImageLoad} />
         </>
