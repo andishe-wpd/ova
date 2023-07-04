@@ -6,7 +6,6 @@ import { GET_LOCATION } from "../services/apolloClient";
 const PlatformSelector = () => {
   const setSelectedPlatformId = useGameQueryStore((s) => s.setLocationId);
   const sdfsdf = useGameQueryStore((s) => s.gameQuery);
-  console.log(sdfsdf);
   const { loading, error: asd, data: asdasd } = useQuery(GET_LOCATION);
 
   return (

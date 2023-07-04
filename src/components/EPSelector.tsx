@@ -20,7 +20,6 @@ const EPSelector = () => {
     (order) => order.value === sortOrder
   );
   const { loading, error, data } = useQuery(GET_EPISODES);
-  // console.log(data?.episodes?.results);
 
   return (
     <Menu>

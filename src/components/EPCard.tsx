@@ -17,6 +17,7 @@ import { useState } from "react";
 
 interface Props {
   game: Game;
+  id: number;
 }
 
 const EPCard = ({ game, id }: Props) => {
@@ -30,10 +31,10 @@ const EPCard = ({ game, id }: Props) => {
       {id > 6 ? (
         <LazyLoadImage
           src={game?.image}
-          alt="Game Image"
+          alt="Episode Image"
           className="full-width-image"
           effect="blur"
-          delayMethod="debounce" // Optional - method for delaying the loading of images (e.g., "debounce" or "throttle")
+          delayMethod="debounce"
           delayTime={700}
           threshold={0.2}
         />
