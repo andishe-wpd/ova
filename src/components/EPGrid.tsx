@@ -9,9 +9,13 @@ import Character from "../entities/Character";
 
 const EPGrid = () => {
   const skeletons = [1, 2, 3, 4, 5, 6];
-  const sdfsdf = useGameQueryStore((s) => s.gameQuery);
+  const querySlelectors = useGameQueryStore((s) => s.gameQuery);
   const { loading, error, data } = useQuery(
-    GET_CHARACTERS(sdfsdf?.searchText, sdfsdf?.LocationId, sdfsdf?.sortOrder)
+    GET_CHARACTERS(
+      querySlelectors?.searchText,
+      querySlelectors?.LocationId,
+      querySlelectors?.sortOrder
+    )
   );
 
   return (

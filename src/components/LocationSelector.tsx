@@ -6,13 +6,13 @@ import { GET_LOCATION } from "../services/apolloClient";
 
 const LocationSelector = () => {
   const setSelectedPlatformId = useGameQueryStore((s) => s.setLocationId);
-  const sdfsdf = useGameQueryStore((s) => s.gameQuery);
+  const LocationLink = useGameQueryStore((s) => s.gameQuery);
   const { loading, error, data } = useQuery(GET_LOCATION);
   return (
     <Menu>
       {/* MenuButton component serves as the trigger for the menu */}
       <MenuButton as={Button} rightIcon={<BsChevronDown />}>
-        Location List: {sdfsdf.LocationId}
+        Location List: {LocationLink.LocationId}
       </MenuButton>
       {/* MenuList component contains the menu items */}
       <MenuList>

@@ -6,7 +6,7 @@ import { GET_EPISODES } from "../services/apolloClient";
 
 const EPSelector = () => {
   const setSortOrder = useGameQueryStore((s) => s.setSortEpisode);
-  const sdfsdf = useGameQueryStore((s) => s.gameQuery);
+  const episodeList = useGameQueryStore((s) => s.gameQuery);
 
   const { data } = useQuery(GET_EPISODES);
 
@@ -14,12 +14,12 @@ const EPSelector = () => {
     <Menu>
       {/* MenuButton component serves as the trigger for the menu */}
       <MenuButton as={Button} rightIcon={<BsChevronDown />}>
-        Episode list: {sdfsdf.sortOrder || "ALL EPISODES"}
+        Episode list: {episodeList.sortOrder || "ALL EPISODES"}
       </MenuButton>
       {/* MenuList component contains the menu items */}
       <MenuList>
         {/* Render menu items based on the data from the query */}
-        {data?.episodes?.results.map((order) => (
+        {data?.episodes?.results.map((order: any) => (
           <MenuItem
             onClick={() => setSortOrder(order.id)}
             key={order.name}

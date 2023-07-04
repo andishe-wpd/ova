@@ -4,8 +4,6 @@ import Countdown from "./Countdown";
 import { useState } from "react";
 
 const EPHeading = () => {
-  const genreId = useGameQueryStore((s) => s.gameQuery.genreId);
-  const platformId = useGameQueryStore((s) => s.gameQuery.platformId);
   const [header, setHeader] = useState("");
 
   return (
