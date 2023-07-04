@@ -27,6 +27,10 @@ export const GET_CHARACTERS = (
         gender
         created
         image
+        episode {
+          id
+          name
+        }
       }
     }
     location(id: "${location}") {
